@@ -1,17 +1,26 @@
 import { FC } from 'react';
 import ChessPiece from '../../types/pieces/ChessPiece';
-import style from './piece.module.css';
+
+import styled from 'styled-components';
 
 interface TileProps {
   idx: number;
   piece?: ChessPiece;
 }
 
+const Img = styled.img`
+  max-width: 100%;
+`;
+
 const Piece: FC<TileProps> = ({ idx, piece }) => {
   return (
-    <div className={style.piece}>
+    <div className="chess-piece">
       {piece ? (
-        <img src={piece.getImages} alt={piece.getTypes.toString()} />
+        <Img
+          src={piece.getImages}
+          alt={piece.getTypes.toString()}
+          className="chess-piece__img"
+        />
       ) : null}
     </div>
   );
