@@ -10,6 +10,9 @@ const ChessboardUI = () => {
   const chessboard = new Chessboard();
 
   // 9 * 10
+  //   const [board, setBoard] = useState(
+  //     Array(90).fill(new Jiang(Color.BLACK, chessboard))
+  //   );
   const [board, setBoard] = useState(Array(90).fill(''));
 
   const renderPieces = () => {
