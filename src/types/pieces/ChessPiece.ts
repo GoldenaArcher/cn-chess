@@ -1,13 +1,14 @@
-import ChessBoard from '../ChessBoard';
+
+import Chessboard from '../Chessboard';
 import Color from '../Color';
 import PieceType from './PieceType';
 
 abstract class ChessPiece {
   private _color: Color;
   private _position: string;
-  private _board: ChessBoard;
+  private _board: Chessboard;
 
-  constructor(color: Color, board: ChessBoard, position = '') {
+  constructor(color: Color, board: Chessboard, position = '') {
     this._color = color;
     this._position = position;
     this._board = board;
@@ -25,13 +26,15 @@ abstract class ChessPiece {
     return this._position;
   }
 
-  public get board(): ChessBoard {
+  public get board(): Chessboard {
     return this._board;
   }
 
   public abstract getLegalMoves(): string[];
 
-  public abstract getTypes(): PieceType;
+  public abstract get getTypes(): PieceType;
+
+  public abstract get getImages(): string;
 }
 
 export default ChessPiece;

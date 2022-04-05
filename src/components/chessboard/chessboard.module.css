@@ -1,0 +1,27 @@
+.chessboard {
+  --tile-size: 5em;
+  --num-of-rows: 10;
+  --num-of-cols: 9;
+
+  border: 2px solid var(--base-black);
+  margin: 0 auto;
+  padding: 20px;
+  width: calc(var(--tile-size) * var(--num-of-cols));
+  position: relative;
+}
+
+.chessTiles {
+  grid-template-columns: repeat(8, 5em);
+}
+
+.tile {
+  position: absolute;
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border: 1px solid var(--base-black);
+}
+
+.chessPieces {
+  display: grid;
+  grid-template-columns: repeat(9, 5em);
+}

@@ -1,1 +1,1 @@
-export default class ChessBoard {}
+export default class Chessboard {}
