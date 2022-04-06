@@ -1,4 +1,4 @@
-import ChessBoard from '../ChessBoard';
+import ChessBoard from '../Chessboard';
 import Color from '../Color';
 import PieceType from './PieceType';
 
@@ -32,6 +32,8 @@ abstract class ChessPiece {
   public abstract getLegalMoves(): string[];
 
   public abstract getTypes(): PieceType;
+
+  public abstract getImages(): string;
 }
 
 export default ChessPiece;
