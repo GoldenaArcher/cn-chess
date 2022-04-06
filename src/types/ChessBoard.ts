@@ -18,6 +18,12 @@ export default class ChessBoard {
     return true;
   }
 
+  public getPiece(pos: string): ChessPiece | null {
+    const index = getIndexFromPos(pos);
+
+    return this._board[index];
+  }
+
   public toString(): string {
     const str: string[] = [];
 
@@ -25,7 +31,7 @@ export default class ChessBoard {
       if (idx % 9 === 0 && idx > 0) {
         str.push('\n');
       }
-      
+
       if (piece === null) {
         str.push('X');
       } else {
