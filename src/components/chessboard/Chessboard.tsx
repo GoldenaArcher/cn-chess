@@ -22,9 +22,9 @@ const ChessboardUIWrapper = styled.div`
   padding: 2em;
   width: calc(${TILE_SIZE} * ${NUM_OF_COLS});
   position: relative;
-
+  
   @media (max-device-width: 1024px) {
-    padding: 1em;
+    padding: 0.5em;
   }
 
   @media (max-width: 768px) {
@@ -57,10 +57,10 @@ const ChessboardUI = () => {
   const chessboard = new Chessboard();
 
   // 9 * 10
-  const [board, setBoard] = useState(
-    Array(90).fill(new Jiang(Color.BLACK, chessboard))
-  );
-  //   const [board, setBoard] = useState(Array(90).fill(''));
+  // const [board, setBoard] = useState(
+  //   Array(90).fill(new Jiang(Color.BLACK, chessboard))
+  // );
+  const [board, setBoard] = useState(Array(90).fill(''));
 
   const renderPieces = () => {
     return (
@@ -72,35 +72,7 @@ const ChessboardUI = () => {
     );
   };
 
-  const renderBoarder = () => {
-    return (
-      <div className={style.chessTiles}>
-        {board.map((piece, idx) => {
-          const y = Math.floor(idx / 9);
-          const x = idx % 9;
-
-          if (y === 9 || x === 8) return null;
-
-          return (
-            <div
-              className={style.tile}
-              key={idx}
-              style={{
-                transform: `translate(${x * 5 + 2.5}em, ${y * 5 + 2.5}em)`,
-              }}
-            ></div>
-          );
-        })}
-      </div>
-    );
-  };
-
-  return (
-    <ChessboardUIWrapper>
-      {/* {renderBoarder()} */}
-      {renderPieces()}
-    </ChessboardUIWrapper>
-  );
+  return <ChessboardUIWrapper>{renderPieces()}</ChessboardUIWrapper>;
 };
 
 export default ChessboardUI;
