@@ -3,6 +3,7 @@ import ChessPiece from '../../types/pieces/ChessPiece';
 import blankPiece from '../../assets/imgs/blank.svg';
 
 import styled from 'styled-components';
+import { BORDER_COLOR } from '../../types/constant';
 
 interface TileProps {
   idx: number;
@@ -16,7 +17,7 @@ const Piece: FC<TileProps> = ({ idx, piece }) => {
   }
   const hasBorderRight = idx % 9 !== 8;
 
-  const image = piece ? piece.getImages : blankPiece;
+  const image = piece ? piece.getImages() : blankPiece;
   const alt = piece ? piece.getTypes.toString() : 'blank piece';
 
   return (
@@ -32,7 +33,7 @@ const before = `
   position: absolute;
   left: calc(50% - 1px);
   top: 50%;
-  border-right: 1px solid black;
+  border-right: 1px solid ${BORDER_COLOR};
   height: 100%;
 }`;
 
@@ -42,7 +43,7 @@ const after = `
   position: absolute;
   left: 50%;
   top: calc(50% - 1px);
-  border-top: 1px solid black;
+  border-top: 1px solid ${BORDER_COLOR};
   width: 100%;
 }`;
 

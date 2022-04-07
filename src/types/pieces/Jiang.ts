@@ -9,11 +9,11 @@ export default class Jiang extends ChessPiece {
   public getLegalMoves(): string[] {
     throw new Error('Method not implemented.');
   }
-  public get getTypes(): PieceType {
+  public getTypes(): PieceType {
     return PieceType.JIANG;
   }
 
-  public get getImages(): string {
+  public getImages(): string {
     if (this.color === Color.BLACK) {
       return jiangBlack;
     }
