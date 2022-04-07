@@ -1,4 +1,4 @@
-import ChessBoard from '../ChessBoard';
+import ChessBoard from '../Chessboard';
 import Color from '../Color';
 import PieceType from './PieceType';
 
@@ -7,9 +7,9 @@ abstract class ChessPiece {
   private _position: string;
   private _board: ChessBoard;
 
-  constructor(color: Color, board: ChessBoard, position = '') {
+  constructor(color: Color, board: ChessBoard) {
     this._color = color;
-    this._position = position;
+    this._position = '';
     this._board = board;
   }
 
@@ -32,6 +32,8 @@ abstract class ChessPiece {
   public abstract getLegalMoves(): string[];
 
   public abstract getTypes(): PieceType;
+
+  public abstract getImages(): string;
 }
 
 export default ChessPiece;
