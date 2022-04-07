@@ -1,7 +1,7 @@
-import ChessPiece from './ChessPiece';
+import Chesspiece from './Chesspiece';
 import PieceType from './PieceType';
 
-export default class Jiang extends ChessPiece {
+export default class Jiang extends Chesspiece {
   public getLegalMoves(): string[] {
     return [];
   }
