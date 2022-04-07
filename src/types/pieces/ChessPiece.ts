@@ -7,9 +7,9 @@ abstract class ChessPiece {
   private _position: string;
   private _board: ChessBoard;
 
-  constructor(color: Color, board: ChessBoard, position = '') {
+  constructor(color: Color, board: ChessBoard) {
     this._color = color;
-    this._position = position;
+    this._position = '';
     this._board = board;
   }
 

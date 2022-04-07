@@ -1,5 +1,6 @@
 import ChessBoard from '../../types/Chessboard';
-import Jiang from '../../types/pieces/ChessPiece';
+import Color from '../../types/Color';
+import Jiang from '../../types/pieces/Jiang';
 
 let board: ChessBoard;
 
@@ -8,6 +9,6 @@ beforeEach(() => {
 });
 
 test('place piece on board', () => {
-  board.placePiece('c2', new Jiang());
+  board.placePiece('c2', new Jiang(Color.BLACK, board));
   console.log(board.toString());
 });
