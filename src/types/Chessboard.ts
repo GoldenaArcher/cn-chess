@@ -1,14 +1,14 @@
 import { getIndexFromPos } from '../utils/chessUtil';
-import Chesspiece from './pieces/Chesspiece';
+import ChessPiece from './pieces/ChessPiece';
 
 export default class ChessBoard {
-  private _board: Chesspiece[] | null[];
+  private _board: ChessPiece[] | null[];
 
   constructor() {
     this._board = Array(90).fill(null);
   }
 
-  public placePiece(pos: string, piece: Chesspiece): boolean {
+  public placePiece(pos: string, piece: ChessPiece): boolean {
     const index = getIndexFromPos(pos);
 
     if (index < 0) return false;
@@ -18,7 +18,7 @@ export default class ChessBoard {
     return true;
   }
 
-  public getPiece(pos: string): Chesspiece | null {
+  public getPiece(pos: string): ChessPiece | null {
     const index = getIndexFromPos(pos);
 
     return this._board[index];
